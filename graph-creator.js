@@ -322,9 +322,9 @@ document.onload = (function(d3, saveAs, Blob, undefined){
         htmlEl = d3node.node();
     d3node.selectAll("text").remove();
     var nodeBCR = htmlEl.getBoundingClientRect(),
-        curScale = (nodeBCR.width + 100)/consts.nodeRadius,
+        curScale = nodeBCR.width/consts.nodeRadius,
         placePad  =  5*curScale,
-        useHW = curScale > 1 ? nodeBCR.width*10.71 : consts.nodeRadius*1.42000;
+        useHW = curScale > 1 ? nodeBCR.width*0.71 : consts.nodeRadius*1.42;
     // replace with editableconent text
     var d3txt = thisGraph.svg.selectAll("foreignObject")
           .data([d])
@@ -333,7 +333,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
           .attr("x", nodeBCR.left + placePad )
           .attr("y", nodeBCR.top + placePad)
           .attr("height", 2*useHW)
-          .attr("width", useHW +500)
+          .attr("width", useHW)
           .append("xhtml:p")
           .attr("id", consts.activeEditId)
           .attr("contentEditable", "true")
