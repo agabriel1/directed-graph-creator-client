@@ -182,8 +182,8 @@ document.onload = (function(d3, saveAs, Blob, undefined){
     BACKSPACE_KEY: 8,
     DELETE_KEY: 46,
     ENTER_KEY: 13,
-    nodeRadius: 100
-  };
+    nodeRadius: 50 //this does not affect the circle size 
+  }; 
 
   /* PROTOTYPE FUNCTIONS */
 
