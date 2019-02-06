@@ -584,7 +584,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
   var docEl = document.documentElement,
       bodyEl = document.getElementsByTagName('body')[0];
 
-  var width = window.innerWidth || docEl.clientWidth || bodyEl.clientWidth,
+  var width = (window.innerWidth + 100) || (docEl.clientWidth + 100) || (bodyEl.clientWidth + 100),
       height =  window.innerHeight|| docEl.clientHeight|| bodyEl.clientHeight;
 
   var xLoc = width/2 - 25,
