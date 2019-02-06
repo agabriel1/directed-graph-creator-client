@@ -567,7 +567,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
   GraphCreator.prototype.updateWindow = function(svg){
     var docEl = document.documentElement,
         bodyEl = document.getElementsByTagName('body')[0];
-    var x = window.innerWidth || docEl.clientWidth || bodyEl.clientWidth;
+    var x = (window.innerWidth + 200) || (docEl.clientWidth + 200) || (bodyEl.clientWidth +200);
     var y = window.innerHeight|| docEl.clientHeight|| bodyEl.clientHeight;
     svg.attr("width", x).attr("height", y);
   };
@@ -597,7 +597,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
 
   /** MAIN SVG **/
   var svg = d3.select(settings.appendElSpec).append("svg")
-        .attr("width", width)
+        .attr("width", width + 500)
         .attr("height", height);
   var graph = new GraphCreator(svg, nodes, edges);
       graph.setIdCt(2);
