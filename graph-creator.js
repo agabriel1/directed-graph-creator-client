@@ -548,7 +548,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
       .call(thisGraph.drag);
 
     newGs.append("circle")
-      .attr("r", 100 ); //String(consts.nodeRadius)
+      .attr("r", 150 ); //String(consts.nodeRadius)
 
     newGs.each(function(d){
       thisGraph.insertTitleLinebreaks(d3.select(this), d.title);
