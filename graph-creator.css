@@ -33,7 +33,7 @@ body{
 }
 
 #toolbox input{
-    width: 75px;
+    width: 30px;
     opacity: 0.4;
 }
 #toolbox input:hover{
