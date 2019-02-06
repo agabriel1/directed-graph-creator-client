@@ -324,7 +324,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
     var nodeBCR = htmlEl.getBoundingClientRect(),
         curScale = nodeBCR.width/consts.nodeRadius,
         placePad  =  5*curScale,
-        useHW = curScale > 1 ? nodeBCR.width*0.71 : consts.nodeRadius*1.42;
+        useHW = curScale > 1 ? nodeBCR.width*0.71 : consts.nodeRadius*1.42000;
     // replace with editableconent text
     var d3txt = thisGraph.svg.selectAll("foreignObject")
           .data([d])
@@ -333,7 +333,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
           .attr("x", nodeBCR.left + placePad )
           .attr("y", nodeBCR.top + placePad)
           .attr("height", 2*useHW)
-          .attr("width", useHW)
+          .attr("width", useHW +500)
           .append("xhtml:p")
           .attr("id", consts.activeEditId)
           .attr("contentEditable", "true")
@@ -569,7 +569,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
         bodyEl = document.getElementsByTagName('body')[0];
     var x = (window.innerWidth + 200) || (docEl.clientWidth + 200) || (bodyEl.clientWidth +200);
     var y = window.innerHeight|| docEl.clientHeight|| bodyEl.clientHeight;
-    svg.attr("width", x).attr("height", y);
+    svg.attr("width", x + 500).attr("height", y);
   };
 
 
@@ -587,7 +587,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
   var width = (window.innerWidth + 500) || (docEl.clientWidth + 700) || (bodyEl.clientWidth + 700),
       height =  window.innerHeight|| docEl.clientHeight|| bodyEl.clientHeight;
 
-  var xLoc = width/2 - 25,
+  var xLoc = width/2 - 25 + 500,
       yLoc = 100;
 
   // initial node data
