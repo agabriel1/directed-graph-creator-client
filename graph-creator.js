@@ -567,9 +567,9 @@ document.onload = (function(d3, saveAs, Blob, undefined){
   GraphCreator.prototype.updateWindow = function(svg){
     var docEl = document.documentElement,
         bodyEl = document.getElementsByTagName('body')[0];
-    var x = (window.innerWidth + 200) || (docEl.clientWidth + 200) || (bodyEl.clientWidth +200);
+    var x = window.innerWidth || docEl.clientWidth || bodyEl.clientWidth;
     var y = window.innerHeight|| docEl.clientHeight|| bodyEl.clientHeight;
-    svg.attr("width", x + 500).attr("height", y);
+    svg.attr("width", x).attr("height", y);
   };
 
 
@@ -584,7 +584,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
   var docEl = document.documentElement,
       bodyEl = document.getElementsByTagName('body')[0];
 
-  var width = (window.innerWidth + 500) || (docEl.clientWidth + 700) || (bodyEl.clientWidth + 700),
+  var width = window.innerWidth || docEl.clientWidth || bodyEl.clientWidth,
       height =  window.innerHeight|| docEl.clientHeight|| bodyEl.clientHeight;
 
   var xLoc = width/2 - 25 + 500,
@@ -597,7 +597,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
 
   /** MAIN SVG **/
   var svg = d3.select(settings.appendElSpec).append("svg")
-        .attr("width", width + 500)
+        .attr("width", width)
         .attr("height", height);
   var graph = new GraphCreator(svg, nodes, edges);
       graph.setIdCt(2);
