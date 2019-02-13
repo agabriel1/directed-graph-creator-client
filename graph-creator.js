@@ -549,11 +549,13 @@ document.onload = (function(d3, saveAs, Blob, undefined){
 //-----------------------------------------------------------------------------------------------------------------------
     newGs.append("circle")
       //.attr("r", 150 ); //String(consts.nodeRadius)
-     .attr("x", 10)
-     .attr("y", 10)
-    .attr("width", 100)
-    .attr("height", 50)    
- 
+     //{.attr("x", 10)
+     //.attr("y", 10)
+    //.attr("width", 100)
+    //.attr("height", 50)    }
+ var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillRect(20, 20, 150, 100);
                             
 //------------------------------------------------------------------------------------------------------------------------    
 
