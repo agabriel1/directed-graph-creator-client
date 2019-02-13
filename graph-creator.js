@@ -546,9 +546,22 @@ document.onload = (function(d3, saveAs, Blob, undefined){
         thisGraph.circleMouseUp.call(thisGraph, d3.select(this), d);
       })
       .call(thisGraph.drag);
-
+//-----------------------------------------------------------------------------------------------------------------------
     newGs.append("circle")
-      .attr("r", 150 ); //String(consts.nodeRadius)
+      //.attr("r", 150 ); //String(consts.nodeRadius)
+    
+    
+    var svgContainer = d3.select("body").append("svg")
+                                     .attr("width", 200)
+                                     .attr("height", 200);
+ 
+ //Draw the Rectangle
+ var rectangle = svgContainer.append("rect")
+                             .attr("x", 10)
+                             .attr("y", 10)
+                            .attr("width", 50)
+                            .attr("height", 100);
+//------------------------------------------------------------------------------------------------------------------------    
 
     newGs.each(function(d){
       thisGraph.insertTitleLinebreaks(d3.select(this), d.title);
