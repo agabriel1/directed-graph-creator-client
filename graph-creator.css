@@ -17,10 +17,10 @@ body{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: rgb(248, 248, 248) // styles the background
+    background-color: rgb(248, 248, 248) /* styles the background */
 } 
 
-//advanced css formatting 
+/*advanced css formatting*/ 
 #toolbox{ 
     position: absolute;  
     bottom: 0;
@@ -58,24 +58,24 @@ marker{
     fill: #333;
 }
 
-affects the color of the circle
+/* affects the color of the circle */
 g.conceptG circle{
     fill: #F6FBFF;
     stroke: #333;
     stroke-width: 2px;
 }
  
-affects the color of the circle when hovering over
+/*affects the color of the circle when hovering over*/
 g.conceptG:hover circle{
     fill: rgb(200, 238, 241);
 }
 
-affects the color of the circle when selected
+/* affects the color of the circle when selected */
 g.selected circle{
     fill: rgb(250, 000, 000);
 }
 
-affects the color of the circle when hovering over the circle
+/*affects the color of the circle when hovering over the circle */
 g.selected:hover circle{
     fill: rgb(250, 232, 255);
 }
