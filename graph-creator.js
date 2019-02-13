@@ -548,19 +548,13 @@ document.onload = (function(d3, saveAs, Blob, undefined){
       .call(thisGraph.drag);
 //-----------------------------------------------------------------------------------------------------------------------
     newGs.append("circle")
-      //.attr("r", 150 ); //String(consts.nodeRadius)
-    
-    
-    var svgContainer = d3.select("body").append("svg")
-                                     .attr("width", 200)
-                                     .attr("height", 200);
+      .attr("r", 150 ); //String(consts.nodeRadius)
+     .attr("x", 10)
+     .attr("y", 10)
+    .attr("width", 100)
+    .attr("height", 50)    
  
- //Draw the Rectangle
- var rectangle = svgContainer.append("rect")
-                             .attr("x", 10)
-                             .attr("y", 10)
-                            .attr("width", 50)
-                            .attr("height", 100);
+                            
 //------------------------------------------------------------------------------------------------------------------------    
 
     newGs.each(function(d){
