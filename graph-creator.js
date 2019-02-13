@@ -553,10 +553,23 @@ document.onload = (function(d3, saveAs, Blob, undefined){
      //.attr("y", 10)
     //.attr("width", 100)
     //.attr("height", 50)    }
- var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.fillRect(20, 20, 150, 100);
-                            
+ //[var c = document.getElementById("myCanvas");
+//var ctx = c.getContext("2d");
+//ctx.fillRect(20, 20, 150, 100); ]
+    // referance the canvas element
+    var canvas=document.getElementById("canvas");
+    //create a canvas context
+    var ctx=canvas.getContext("2d");
+    //context's fill and stroke styles
+    ctx.fillStyle="skyblue";
+ctx.strokeStyle="lightgray";
+ctx.lineWidth=3;
+    // set up variables to hold the mouse starting X/Y
+// when the user drags the mouse
+var startX;
+var startY;
+    // set up a variable to determine whether to  draw a square or a rectangle
+  var modeName="square";
 //------------------------------------------------------------------------------------------------------------------------    
 
     newGs.each(function(d){
