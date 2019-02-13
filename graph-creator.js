@@ -13,7 +13,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
     var thisGraph = this;
         thisGraph.idct = 0;
 
-    thisGraph.nodes = nodes || [];
+    thisGraph.nodes = nodes || []; //set initial node data
     thisGraph.edges = edges || [];
 
     thisGraph.state = {
@@ -123,7 +123,7 @@ document.onload = (function(d3, saveAs, Blob, undefined){
       });
       var blob = new Blob([window.JSON.stringify({"nodes": thisGraph.nodes, "edges": saveEdges})], {type: "text/plain;charset=utf-8"});
       saveAs(blob, "mydag.json");
-    });
+    }); 
 
 
     // handle uploaded data
